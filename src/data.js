@@ -1,29 +1,16 @@
-let wallets = [
-  {
-    
-      address: "1a1a1a1",
-      balance: 250
-  },
-  {
-    address: "1b1b1b1",
-    balance: 200
-  },
-  {
-    address: "1c1c1c1",
-    balance: 200
-  },
-  {
-    address: "1d1d1d1",
-    balance: 200
-  },
+let addressess = [
+  "1a1a1a1",
+  "1b1b1b1",
+  "1c1c1c1",
+  "1d1d1d1",
 ]
 let transactions = [
   {
     hash: "0x39ae0a30kljaldkfa909012934j3i029iealjnfdkajnfdfadsf",
     status: "SUCCESS",
     timestamp: Date.now(),
-    from: wallets[1],
-    to: wallets[3],
+    from: addressess[1],
+    to: addressess[3],
     value: 250,
     currency: "ETH",
     gas_user: 21000
@@ -32,8 +19,8 @@ let transactions = [
     hash: "0x39ae0a30kljaldkfa909012934j3i029iealjnfdkajnfdfadsf",
     status: "SUCCESS",
     timestamp: Date.now(),
-    from: wallets[1],
-    to: wallets[3],
+    from: addressess[1],
+    to: addressess[3],
     value: 250,
     currency: "ETH",
     gas_user: 25000
@@ -42,8 +29,8 @@ let transactions = [
     hash: "0x39ae0a30kljaldkfa909012934j3i029iealjnfdkajnfdfadsf",
     status: "SUCCESS",
     timestamp: Date.now(),
-    from: wallets[3],
-    to: wallets[2],
+    from: addressess[3],
+    to: addressess[2],
     value: 250,
     currency: "ETH",
     gas_user: 30000
@@ -52,8 +39,8 @@ let transactions = [
     hash: "0x39ae0a30kljaldkfa909012934j3i029iealjnfdkajnfdfadsf",
     status: "SUCCESS",
     timestamp: Date.now(),
-    from: wallets[2],
-    to: wallets[1],
+    from: addressess[2],
+    to: addressess[1],
     value: 250,
     currency: "ETH",
     gas_user: 30000
@@ -62,8 +49,8 @@ let transactions = [
     hash: "0x39ae0a30kljaldkfa909012934j3i029iealjnfdkajnfdfadsf",
     status: "SUCCESS",
     timestamp: Date.now(),
-    from: wallets[2],
-    to: wallets[0],
+    from: addressess[2],
+    to: addressess[0],
     value: 250,
     currency: "ETH",
     gas_user: 30000
@@ -71,5 +58,5 @@ let transactions = [
 ]
 
 export {
-  wallets, transactions
+  addressess, transactions
 }

@@ -1,10 +1,18 @@
 import React from 'react';
 
-const Addresses = () => {
+const Addresses = ({addressess}) => {
+    console.log(addressess);
     return (
-        <div>
-            <p>Adresses</p>
-        </div>
+        <>
+        <h1>Blockchain Node Addresses</h1>
+            <div>
+                {
+                    addressess.map((addresse) => {
+                    return <div>{addresse}</div>
+                    })
+                }
+            </div>
+        </>
     );
 };
     
