@@ -1,70 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-import {Browser, Routes, BrowserRouter, Route, Link} from "react-router-dom";
-import { Component } from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Component, useState } from 'react';
 import  Addresses from "./components/Addresses";
 import  Transfer from "./components/Transfer";
 import  Reciept from "./components/Reciept";
 import  Wallet from "./components/Wallet";
-import  History from "./components/History";
+import History from "./components/History";
+import Navbar from "./components/Navbar";
+import {  transactions, wallets} from "./data"
 
+import React from 'react'
+import Wallets from "./components/Wallets";
 
-/*function App() {
+export const App = () => {
+  const [currentUser, setCurrentUser] = useState(null)
+  const [wallets, setWallets] = useState([])
+  const [transcations, setTransaction] = useState([])
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}*/
-
-class App extends Component {
-  render () {
-    return (
-      <BrowserRouter >
-        <div>
-          <ul>
-          <li>
-              <Link to="/Addresses">Addresses</Link> 
-            </li>
-            <li>
-              <Link to="/History">History</Link> 
-            </li>
-            <li>
-              <Link to="/Reciept">Reciept</Link> 
-            </li>
-            <li>
-              <Link to="/Transfer">Transfer</Link> 
-            </li>
-            <li>
-              <Link to="/Wallet">Wallet</Link> 
-            </li>
-
-          </ul>
-        
-          <Routes>
-            <Route path="/Addresses" component={Addresses}  />
-            <Route path="/History" component={History} />
-            <Route path="/Reciept" component={Reciept} />
-            <Route path="/Transfer" component={Transfer} />                  
-            <Route path="/Wallet" component={Wallet} />
+    <BrowserRouter>
+          <Navbar/>
+      <Routes>
+            <Route path="/" element={<Transfer/>} />
+            <Route path="/" element={<Addresses/>}/>
+            <Route path="/wallets/:id" element={<Wallets/>} />
+            <Route path="/" element={<Addresses/>}/>
           </Routes>
-        </div>
       </BrowserRouter>
-    );
-  }
+  )
 }
+
 
 export default App;
