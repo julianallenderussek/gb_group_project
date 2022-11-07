@@ -1,23 +1,26 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AppContext } from './AppContext';
+import "./Wallet.css"
 
 const Wallet = () => {
-    const { currentWallet, balance } = useContext(AppContext)
+    const { currentWallet, balance, getBalance } = useContext(AppContext)
 
-
+    useEffect(() => {
+        getBalance()
+    }, [])
 
     return (
-        <div>
+        <div className='page-wrapper'>
             <h1>My Wallet</h1>
             <div className='wallet'>
-                <div className='wallet-row'>
-                    <strong>Address:</strong>
+                <p className='wallet-row'>
+                    <strong>Address: </strong>
                     { currentWallet }
-                </div>
-                <div className='wallet-row'>
-                    <strong>Balance:</strong>
+                </p>
+                <p className='wallet-row'>
+                    <strong>Balance: </strong>
                     { balance } ETH
-                </div>
+                </p>
             </div>
         </div>
     );

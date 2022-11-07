@@ -7,7 +7,7 @@ export const AppContextProvider = ({ children }) => {
   const [transactions, setTransactions] = useState([])
   console.log();
   const [currentWallet, setCurrentWallet] = useState("")
-  const [receipt, setReceipt] = useState(null)
+  const [receipt, setReceipt] = useState(false)
   
   const getBalance = async () => {
     const plusTransactions = transactions.filter(trans => trans.to === currentWallet
@@ -38,7 +38,9 @@ export const AppContextProvider = ({ children }) => {
           transactions,
         setTransactions,
         currentWallet,
-        getBalance
+        getBalance,
+        receipt,
+        setReceipt
       }}
     >
       { children }

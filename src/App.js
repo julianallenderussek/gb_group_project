@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import React from 'react'
 import Transactions from "./components/Transactions";
 import Wallet from "./components/Wallet";
+import "./App.css"
 
 export const App = () => {
   
@@ -15,15 +16,12 @@ export const App = () => {
 
   return (
     <BrowserRouter>
-        <Navbar/>
-        {
-        currentWallet ? <>Current Wallet: {currentWallet}</> : <></>
-        }
-        <Routes>
-            <Route path="/transactions" element={<Transactions />} />
-            <Route path="/transfer/:id" element={<Transfer/>} />
-            <Route path="/wallet" element={<Wallet/>} />
-        <Route path="/" element={<Addresses currentWallet={currentWallet} />}/>
+      <Navbar/>
+      <Routes>
+              <Route path="/transactions" element={<Transactions />} />
+              <Route path="/transfer/:id" element={<Transfer/>} />
+              <Route path="/wallet" element={<Wallet/>} />
+              <Route path="/" element={<Addresses currentWallet={currentWallet} />}/>
         </Routes>
     </BrowserRouter>
     )

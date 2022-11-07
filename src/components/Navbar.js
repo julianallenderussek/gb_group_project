@@ -11,10 +11,10 @@ export default function Navbar
         <Link className='navbar-link' to="/">Addresses</Link> 
       </li>
       <li className='navbar-li'>
-        <Link to="/transactions">Transactions</Link> 
+        <Link className='navbar-link' to="/transactions">Transactions</Link> 
       </li>
       <li className='navbar-li'>
-        <Link to="/wallet">Wallet</Link> 
+        <Link className='navbar-link' to="/wallet">Wallet</Link> 
       </li>
     </ul>
   )

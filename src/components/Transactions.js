@@ -6,8 +6,8 @@ const Transactions = () => {
     const { transactions } = useContext(AppContext)
 
     return (
-        <div>
-            <>{transactions.length}</>
+        <div className='page-wrapper'>
+            <div>Number of transaction: {transactions.length}</div>
             <h1>Transaction History</h1>
             {
                 transactions.map(transaction => {
@@ -18,7 +18,7 @@ const Transactions = () => {
     );
 };
 
-const Transaction = ({ transaction }) => {
+export const Transaction = ({ transaction }) => {
     const { hash, status, timestamp, from, to, value, currency} = transaction  
     return (
         <div className='transaction'>    

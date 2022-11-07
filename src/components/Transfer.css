@@ -13,3 +13,8 @@
   align-items: center;
   padding-left: 20px;
 }
+
+.page-wrapper {
+  width: 80%;
+  margin: auto;
+}
