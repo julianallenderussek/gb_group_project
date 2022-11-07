@@ -1,4 +1,6 @@
-#umut yorulmaz no: 101410083
+### TEAM MEMBERS
+# Umut Yorulmaz no: 101410083
+# Julian Allende no: 101443275
 
 # Getting Started with Create React App
 
