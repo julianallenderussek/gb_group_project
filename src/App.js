@@ -1,36 +1,33 @@
+import { AppContext } from "./components/AppContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Component, useEffect, useState } from 'react';
+import { useContext } from 'react';
 import  Addresses from "./components/Addresses";
 import  Transfer from "./components/Transfer";
-import  Reciept from "./components/Reciept";
-import  Wallet from "./components/Wallet";
-import History from "./components/History";
 import Navbar from "./components/Navbar";
-import {  transactions, addressess} from "./data"
-
 import React from 'react'
-import Wallets from "./components/Wallets";
+import Transactions from "./components/Transactions";
+import Wallet from "./components/Wallet";
 
 export const App = () => {
-  const [currentWallet, setWallet] = useState(null);
-  const [addresses, setWallets] = useState([...addressess]);
-  const [transcations, setTransaction] = useState([]);
   
+  const context = useContext(AppContext)
+  const { currentWallet } = context;
+
+
   return (
     <BrowserRouter>
-      <Navbar addressess={addressess} />
+        <Navbar/>
         {
-        currentWallet ? <>{currentWallet}</> : <>Please choose a wallet</>
+        currentWallet ? <>Current Wallet: {currentWallet}</> : <></>
         }
         <Routes>
-            <Route path="/history" element={<Transfer />} />
-            <Route path="/transfer" element={<Transfer/>} />
-            <Route path="/addresses" element={<Addresses addressess={addressess} />}/>
-            <Route path="/wallets" element={<Wallets/>} />
-            <Route path="/" element={<Addresses/>}/>
+            <Route path="/transactions" element={<Transactions />} />
+            <Route path="/transfer/:id" element={<Transfer/>} />
+            <Route path="/wallet" element={<Wallet/>} />
+        <Route path="/" element={<Addresses currentWallet={currentWallet} />}/>
         </Routes>
-      </BrowserRouter>
-  )
+    </BrowserRouter>
+    )
 }
 
 
