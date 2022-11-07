@@ -6,14 +6,10 @@ import "./Transfer.css"
 const Transfer =() => {
     const { id } = useParams();
     const context = useContext(AppContext);
-    const { currentWallet, setTransactions, balance, transactions, getBalance, setBalance } = context;
-    
+    const { currentWallet, setTransactions, balance, transactions, getBalance } = context;
     const [amount, setAmount] = useState("")
 
     const handleTransaction = (e) => {
-        e.preventDefault();
-        console.log("check this");
-        console.log(amount, balance);
         if (amount > 0 && amount < balance) {
             const newTransaction = {
                 hash: "kajndfkjndakjnf9189hn19urnj",
@@ -25,8 +21,10 @@ const Transfer =() => {
                 currency: "ETH",
                 gas_user: 21000
             }
+
             console.log([...transactions, newTransaction]);
             setTransactions([...transactions, newTransaction])
+            getBalance()
         }
     }
 
@@ -66,5 +64,5 @@ const Transfer =() => {
         </div>
     );
 };
-    
+
 export default Transfer;

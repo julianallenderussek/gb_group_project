@@ -13,7 +13,6 @@ export const App = () => {
   const context = useContext(AppContext)
   const { currentWallet } = context;
 
-
   return (
     <BrowserRouter>
         <Navbar/>

@@ -7,6 +7,7 @@ const Transactions = () => {
 
     return (
         <div>
+            <>{transactions.length}</>
             <h1>Transaction History</h1>
             {
                 transactions.map(transaction => {

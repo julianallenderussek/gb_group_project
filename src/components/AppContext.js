@@ -7,6 +7,7 @@ export const AppContextProvider = ({ children }) => {
   const [transactions, setTransactions] = useState([])
   console.log();
   const [currentWallet, setCurrentWallet] = useState("")
+  const [receipt, setReceipt] = useState(null)
   
   const getBalance = async () => {
     const plusTransactions = transactions.filter(trans => trans.to === currentWallet
@@ -18,7 +19,8 @@ export const AppContextProvider = ({ children }) => {
         console.log(plusTransactions, minusTransactions)
         console.log(plusSum, minusSum);
         const newBalance = plusSum - minusSum
-        setBalance(newBalance)
+    setBalance(newBalance)
+    console.log("transactions", transactions);
   }
       
   useEffect(() => {
@@ -33,7 +35,8 @@ export const AppContextProvider = ({ children }) => {
         balance,
         setBalance,
         addresses,
-        transactions,
+          transactions,
+        setTransactions,
         currentWallet,
         getBalance
       }}

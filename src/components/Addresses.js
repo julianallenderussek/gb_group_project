@@ -6,6 +6,7 @@ const Addresses = () => {
     
     const context = useContext(AppContext)
     const { addresses, currentWallet } = context;
+    
     return (
         <>
         <h1>Blockchain Node Addresses</h1>
@@ -14,7 +15,7 @@ const Addresses = () => {
                     addresses.map((addresse) => {
                         return (
                             <div>
-                                <Link to={`/transfer/:${addresse}`}
+                                <Link to={`/transfer/${addresse}`}
                                 from={currentWallet}
                                 >{addresse}</Link>
                             </div>
